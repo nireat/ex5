@@ -10,3 +10,4 @@ target/.gitignore
 .settings/org.eclipse.jdt.core.prefs
 .project
 .classpath
+/target/

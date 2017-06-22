@@ -6,6 +6,13 @@
   <mapper namespace="StudentMapper">
   	
   	<insert id="joinStudent" parameterType="com.choa.member.student.StudentDTO">
-  		insert into student values(#{sid}, #{phone}, #{tid})
+  		insert into student values(#{id}, #{phone}, #{tid})
   	</insert>
+  	<select id="memberPage" parameterType="java.lang.String" resultType="com.choa.member.student.StudentDTO">
+  		select * from student where sid=#{id} 
+  	</select>
+  	<select id="memberLogin" parameterType="com.choa.member.MemberDTO" resultType="com.choa.member.student.StudentDTO">
+  		select M.*, S.* from member M, student S 
+  		where M.id=#{id} and M.pw=#{pw} and M.id=S.sid 
+  	</select>
   </mapper>

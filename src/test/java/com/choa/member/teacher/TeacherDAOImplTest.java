@@ -29,7 +29,6 @@ public class TeacherDAOImplTest extends MyAbstractTestUnit{
 		teacherDTO.setGrade("t");
 		teacherDTO.setFilename("dddd.jpg");
 		teacherDTO.setOriname("dddd.jpg");
-		teacherDTO.setTid("dddd");
 		teacherDTO.setSubject("math");
 		
 		

@@ -26,10 +26,8 @@ public class FileUploadController {
 	}
 	
 	
-	
-	
 	//@RequestMapping(value="/test/fileUp1", method=RequestMethod.POST)
-	//request 이용
+	//MultipartHttpServletrequest 이용
 	public void fileUpload1(String name, MultipartHttpServletRequest request) throws Exception{
 		System.out.println("NAME : "+name);
 		MultipartFile f = request.getFile("f1");
@@ -62,13 +60,17 @@ public class FileUploadController {
 	public void fileUpload3(FileDTO fileDTO, HttpSession session)throws Exception{
 		FileSaver fs = new FileSaver();
 		String realPath = session.getServletContext().getRealPath("resources/upload");
-		System.out.println(realPath);
-		String oriName = fileDTO.getF1().getOriginalFilename();
-		byte [] fileData = fileDTO.getF1().getBytes();
+		fs.filesave(realPath, fileDTO.getF1());
 		
-		fs.filesave(realPath, oriName, fileData);
+		
+		//System.out.println(realPath);
+		/*String oriName = fileDTO.getF1().getOriginalFilename();
+		byte [] fileData = fileDTO.getF1().getBytes();
+		fs.filesave(realPath, oriName, fileData);*/
 		
 	}
+	
+	
 	
 /*	//파일을 디스크에 저장하는 역할 -> util 패키지에 filesaver로 이동
 	private String upload1(MultipartFile f, String path) throws Exception{

@@ -45,7 +45,7 @@
 		<!-- 공통 입력 사항 -->
 		<div>
 			<p>ID: <input type="text" name="id"></p>
-			<p>PW: <input type="text" name="pw"></p>
+			<p>PW: <input type="password" name="pw"></p>
 			<p>NAME: <input type="text" name="name"></p>
 			<p>AGE: <input type="number" name="age"></p>
 			<p>FILENAME: <input type="file" name="f1"></p>
@@ -53,13 +53,13 @@
 		</div>
 		<!-- student 전용 -->
 		<div class="student">
-			<p>SID: <input type="text" name="sid"></p>
+			
 			<p>PHONE: <input type="text" name="phone"></p>
 			<p>TID: <input type="text" name="tid"></p>
 		</div>
 		<!-- teacher 전용 -->
 		<div class="teacher" style="display: none;">
-			<p>TID: <input type="text" name="tid"></p>
+			
 			<p>SUBJECT: <input type="text" name="subject"></p>
 			<p>HIREDATE: <input type="date" name="hiredate"></p>
 		</div>

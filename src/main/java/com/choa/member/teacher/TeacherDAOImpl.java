@@ -21,9 +21,23 @@ public class TeacherDAOImpl implements MemberDAO{
 		int result = sqlsession.insert(NAMESPACE+"joinTeacher", memberDTO);
 		return result;
 	}
+
+	@Override
+	public MemberDTO memberLogin(MemberDTO memberDTO) throws Exception {
+		return sqlsession.selectOne(NAMESPACE2+"loginMember", memberDTO);
+		
+	}
 	
 	
+	@Override
+	public MemberDTO memberPage(String id) throws Exception {
+		
+		return sqlsession.selectOne(NAMESPACE+"memberPage", id);
+	}
 	
-	
+	public MemberDTO test(MemberDTO memberDTO){
+		return sqlsession.selectOne(NAMESPACE+"memberLogin", memberDTO);
+		
+	}
 		
 }
